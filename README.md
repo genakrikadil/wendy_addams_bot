@@ -7,7 +7,7 @@
 
 Dedication
 
-This project is dedicated to my lovely daughter, Katerine, whose enthusiasm for Wendy Addams has inspired this creation. Katerine, your love for Wendy’s unique charm and wit has brought this fun idea to life. I hope this chatbot brings you as much joy as Wendy Addams has brought to your heart.
+This project is dedicated to my lovely daughter, Katherine, whose enthusiasm for Wendy Addams has inspired this creation. Katherine, your love for Wendy’s unique charm and wit has brought this fun idea to life. I hope this chatbot brings you as much joy as Wendy Addams has brought to your heart.
 
 With love,
 Dad
