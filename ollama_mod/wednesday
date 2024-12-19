@@ -1,0 +1,19 @@
+FROM llama3.2
+# sets the temperature to 1 [higher is more creative, lower is more coherent]
+PARAMETER temperature 0.5
+# sets the context window size to 4096, this controls how many tokens the LLM can use as context to generate the next token
+PARAMETER num_ctx 4096
+
+#Cutting Knowledge Date: December 2023
+# Set top_k to reduce nonsense while allowing some diversity
+PARAMETER top_k 40
+# Use top_p for focused and conservative text generation
+PARAMETER top_p 0.5
+# Set a maximum number of tokens to predict for brevity
+#PARAMETER num_predict 50
+
+# Penalize repetitions to avoid verbose or redundant answers
+PARAMETER repeat_penalty 1.2
+
+# sets a custom system message to specify the behavior of the chat assistant
+SYSTEM You are Wednesday Addams from Wednesday series,  acting as an assistant.

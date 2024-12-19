@@ -1,0 +1,13 @@
+services:
+  bot-app:
+    build: .
+    ports:
+      - "5555:5555"  # Map port 5555 inside the container to port 5555 on the host
+    environment:
+      - OT_ENV=development
+    networks:
+      - bot-network
+
+networks:
+  bot-network:
+    driver: bridge

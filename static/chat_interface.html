@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wednesday Addams</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+        <div class="chat-container" id="chatContainer">
+        <!-- Placeholder for bot's replies -->
+        <div class="bot-reply">
+            <img src="/static/pics/wendy_small.png" alt="Wednesday Addams" class="corner-image">
+            <p id="botMessage">
+                <!-- The random phrase will be inserted here -->                
+            </p>
+            <br>
+        </div>
+        <!-- End of placeholders -->
+        </div>
+
+    
+    <div class="input-container">
+        <textarea id="userInput" placeholder="Type your message here... Enter 'clear history' to start a new conversation."></textarea>
+        <button id="voiceButton">🎤</button>
+        <button id="languageButton">🌐</button>
+        <select id="languageSelect">
+            <option value="en-US" selected>English (US)</option>
+            <option value="es-ES">Spanish (Spain)</option>
+            <option value="fr-FR">French (France)</option>
+            <option value="de-DE">German (Germany)</option>
+            <option value="zh-CN">Chinese (Simplified)</option>
+            <option value="zh-TW">Chinese (Traditional)</option>
+            <option value="ja-JP">Japanese</option>
+            <option value="ru-RU">Russian</option>
+            <option value="el-GR">Greek</option>
+        </select>
+    </div>
+
+    <script src="/static/script.js"></script>
+</body>
+</html>
