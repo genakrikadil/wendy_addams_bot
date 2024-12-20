@@ -35,7 +35,7 @@ Requirements:
 Python 3.9.21 (This is what I used, did not test with other versions)
 Docker or Python virtual environment (venv)
 ollama server with llama3.2 image (or whatever image you like)
-
+```
 Project Structure:
 .
 ├── ollama_mod/
@@ -57,7 +57,7 @@ Project Structure:
 ├── Dockerfile
 ├── docker-compose.yml
 └── README.md
-
+```
 How to Run:
 1) Set Up Ms. Addams model:
 
