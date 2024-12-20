@@ -18,10 +18,8 @@ I do use llama3.2:3b image. You can read about it here:
 
     ollama create wednesday --file wednesday
 
-This command will give you modefile
-for the any model you have already
-This is not required for the project, just to
-satisfy your curiocity
+This command will give you modelfile for the any model you have already
+This is not required for the project, just to satisfy your curiocity
 
     ollama show <model> --modelfile > modelfile
 
