@@ -100,15 +100,15 @@ class LlamaChat:
 
                 return model_response
             else:
-                return f"Error {response.status_code}: {response.text}"
+                return f"Something is not right with Ollama Server. Here is what she sad:<br><br>\n {response.status_code}: {response.text}"
         except Exception as e:
-            return f"Error: {str(e)}"
+            return f"Is Ollama server running? Here is Error I received:<br><br> \n {str(e)}"
 
 if __name__ == '__main__':
     chat = LlamaChat()
-    print("Welcome to Llama Chat! Type 'exit' to quit.")
+    print("Welcome to Llama Chat!")
     while True:
-        user_input = input("You: ").strip()
+        user_input = input("You (type 'exit' to quit): ").strip()
         if user_input.lower() == "exit":
             print("Exiting Llama Chat. Goodbye!")
             break

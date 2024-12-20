@@ -32,7 +32,6 @@ def render_html(bot_response):
     html_response = markdown.markdown(bot_response, extensions=['fenced_code', 'tables'])
     # Render the response in Wendy-style
     html_template = f"""
-        <!DOCTYPE html>  
                 <body class="clearfix">
                         <img src="\static\pics\wendy_small.png" alt="Description" class="corner-image">
                         <p>

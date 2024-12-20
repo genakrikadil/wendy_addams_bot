@@ -1,4 +1,5 @@
-
+'''
+  
     W   W     EEEEE    N   N    DDDD    Y   Y
     W   W     E        NN  N    D   D    Y Y
     W W W     EEEE     N N N    D   D     Y
@@ -21,7 +22,7 @@ The chatbot supports "context-aware" conversations and allows voice input.
 
 A dropdown menu lets users select the language for voice input. Without the Voice Input Language selector, the voice-to-text feature assumes the input language is English and may not perform the conversion properly for another languages.
 
-Regardless of how the user enters text—whether by typing or via voice-to-text it is automatically translated into English if needed, and then processed by the Ollama model. The input language is detected automatically, and translation is performed on an as-needed basis.
+Regardless of how the user enters text, whether by typing or via voice-to-text, it is automatically translated into English if needed, and then processed by the Ollama model. The input language is detected automatically, and translation is performed on an as-needed basis.
 
 Users do not need to select a language from the dropdown menu when entering text via the keyboard. The language selector is used exclusively for voice-to-text input.
 
@@ -120,3 +121,5 @@ docker rmi -f <image_id>
 
 #Optional: Clean Up Unused Images:
 docker image prune
+
+'''

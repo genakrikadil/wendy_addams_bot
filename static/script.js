@@ -51,7 +51,7 @@ async function sendMessage() {
 
     } catch (error) {
         console.error('Error fetching response:', error);
-        addMessage('Sorry, there was an error.', 'bot');
+        addMessage(`Sorry, there was an error on backend: ${error.message}`, 'bot');
     } finally {
         // Remove the "Thinking..." indicator after receiving the response or in case of an error
         if (thinkingIndicator) {
