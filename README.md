@@ -35,29 +35,29 @@ Requirements:
 Python 3.9.21 (This is what I used, did not test with other versions)
 Docker or Python virtual environment (venv)
 ollama server with llama3.2 image (or whatever image you like)
-```
-Project Structure:
-.
-├── ollama_mod/
-│   ├── README.md
-│   └── wednesday
-├── static/
-│   ├── pics/
-│   │   ├── wendy_small.png
-│   │   └── wendy.jpg
-│   ├── README.md   
-│   ├── chat_interface.htm
-│   ├── script.js
-│   └── styles.css
-├── app.py
-├── ask_llama.py
-├── render_html.py
-├── translate.py
-├── requirements.txt
-├── Dockerfile
-├── docker-compose.yml
-└── README.md
-```
+
+    Project Structure:
+    .
+    ├── ollama_mod/
+    │   ├── README.md
+    │   └── wednesday
+    ├── static/
+    │   ├── pics/
+    │   │   ├── wendy_small.png
+    │   │   └── wendy.jpg
+    │   ├── README.md   
+    │   ├── chat_interface.htm
+    │   ├── script.js
+    │   └── styles.css
+    ├── app.py
+    ├── ask_llama.py
+    ├── render_html.py
+    ├── translate.py
+    ├── requirements.txt
+    ├── Dockerfile
+    ├── docker-compose.yml
+    └── README.md
+
 How to Run:
 1) Set Up Ms. Addams model:
 
@@ -74,25 +74,25 @@ If python script runs on the same server with ollama and you use venv, no change
 If it is another server, and/or you use Docker, you need to adjust URL
 Change:
 
-URL = "http://127.0.0.1:11434/api/generate"
-to match the server IP/hostname, where Ollama is running. 
+    URL = "http://127.0.0.1:11434/api/generate"
+    to match the server IP/hostname, where Ollama is running. 
 
 4) Build and Run with Docker:
 
 Make sure you're in the project root directory (where the Dockerfile is located). Then, execute the following commands to build and run the Docker container:
 
-#Build the Docker Image:
-docker build -t wendy_bot .
+    #Build the Docker Image:
+    docker build -t wendy_bot .
 
-#Verify the Image:
-docker images
+    #Verify the Image:
+    docker images
 
-#Run the Docker Container (Detached Mode):
-docker run -d -p 5555:5555 wendy_bot
+    #Run the Docker Container (Detached Mode):
+    docker run -d -p 5555:5555 wendy_bot
 
 This will start the container, and you can access the chatbot via:
 
-http://your_server_ip:5555
+    http://your_server_ip:5555
 
 You can stop the container at any time.
 
@@ -100,26 +100,26 @@ You can stop the container at any time.
 
 To stop the container and/or perform cleanup, use the following commands:
 
-#Verify Running Containers:
-docker ps | grep wendy_bot
+    #Verify Running Containers:
+    docker ps | grep wendy_bot
 
-#Stop the Container:
-docker stop <container_id>
+    #Stop the Container:
+    docker stop <container_id>
 
-#General Docker Cleanup Commands:
-#Remove a Stopped Container:
-docker ps -a | grep wendy
-docker stop <container_id>
-docker rm <container_id>
+    #General Docker Cleanup Commands:
+    #Remove a Stopped Container:
+    docker ps -a | grep wendy
+    docker stop <container_id>
+    docker rm <container_id>
 
-#Remove an Image:
-docker images | grep wendy
-docker rmi <image_name_or_id>
+    #Remove an Image:
+    docker images | grep wendy
+    docker rmi <image_name_or_id>
 
-#Force Removal of an Image:
-docker rmi -f <image_id>
+    #Force Removal of an Image:
+    docker rmi -f <image_id>
 
-#Optional: Clean Up Unused Images:
-docker image prune
+    #Optional: Clean Up Unused Images:
+    docker image prune
 
 ```
