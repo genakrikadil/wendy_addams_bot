@@ -1,4 +1,4 @@
-'''
+```plaintext
   
     W   W     EEEEE    N   N    DDDD    Y   Y
     W   W     E        NN  N    D   D    Y Y
@@ -122,4 +122,4 @@ docker rmi -f <image_id>
 #Optional: Clean Up Unused Images:
 docker image prune
 
-'''
+```
