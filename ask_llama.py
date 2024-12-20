@@ -38,8 +38,8 @@
 import requests  # Add this import statement
 import json
 
-URL = "http://192.168.2.112:11434/api/generate"
-#URL = "http://127.0.0.1:11434/api/generate"
+#URL = "http://192.168.2.112:11434/api/generate"
+URL = "http://127.0.0.1:11434/api/generate"
 #URL ="http://10.20.187.188:11434/api/generate"
 
 #see folder "ollama_mod"

@@ -104,26 +104,28 @@ You can stop the container at any time.
 
 To stop the container and/or perform cleanup, use the following commands:
 
-    #Verify Running Containers:
+#Verify Running Containers:
     docker ps | grep wendy_bot
 
-    #Stop the Container:
-    docker stop <container_id>
+#Stop the Container:
+        docker stop <container_id>
 
-    #General Docker Cleanup Commands:
-    #Remove a Stopped Container:
-    docker ps -a | grep wendy
-    docker stop <container_id>
-    docker rm <container_id>
+#General Docker Cleanup Commands:
+    
+#Remove a Stopped Container:
 
-    #Remove an Image:
-    docker images | grep wendy
-    docker rmi <image_name_or_id>
+        docker ps -a | grep wendy
+        docker stop <container_id>
+        docker rm <container_id>
 
-    #Force Removal of an Image:
-    docker rmi -f <image_id>
+#Remove an Image:
+        docker images | grep wendy
+        docker rmi <image_name_or_id>
 
-    #Optional: Clean Up Unused Images:
+#Force Removal of an Image:
+        docker rmi -f <image_id>
+
+#Optional: Clean Up Unused Images:
     docker image prune
 
 
