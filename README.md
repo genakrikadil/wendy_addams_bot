@@ -6,7 +6,7 @@
     WW WW     E        N  NN    D   D     Y
     W   W     EEEEE    N   N    DDDD      Y
 
-#Dedication
+# Dedication
 
 This project is dedicated to my lovely daughter, Katherine, whose enthusiasm for Wendy Addams has inspired this creation. Katherine, your love for Wendy’s unique charm and wit has brought this fun idea to life. I hope this chatbot brings you as much joy as Wendy Addams has brought to your heart.
 
@@ -14,7 +14,7 @@ With love,
 Dad
 
 
-#Project Overview
+# Project Overview
 
 This project provides a chatbot interface for the Ollama server, simulating a conversation with Wendy Addams, a member of the Addams Family.
 
@@ -31,7 +31,7 @@ Reloading the web page does not clear the chat "context". To clear context, you 
 Before pressing the Mic button, make sure to select the Voice Input Language. If the Mic button is pressed, stop it, change the language, and then press the Mic again.
 
 
-#Requirements:
+# Requirements:
 
 Python 3.9.21 (This is what I used, did not test with other versions)
 
@@ -39,7 +39,7 @@ Docker or Python virtual environment (venv)
 
 Ollama server with llama3.2 image (or whatever image you like)
 
-#Project Structure:
+# Project Structure:
     .
     ├── ollama_mod/
     │   ├── README.md
@@ -61,7 +61,7 @@ Ollama server with llama3.2 image (or whatever image you like)
     ├── docker-compose.yml
     └── README.md
 
-#How to Run:
+# How to Run:
 
 1) Set Up Ms. Addams model:
 

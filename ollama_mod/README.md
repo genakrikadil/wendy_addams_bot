@@ -1,12 +1,19 @@
+    W   W     EEEEE    N   N    DDDD    Y   Y
+    W   W     E        NN  N    D   D    Y Y
+    W W W     EEEE     N N N    D   D     Y
+    WW WW     E        N  NN    D   D     Y
+    W   W     EEEEE    N   N    DDDD      Y
 
-#Here we create AI Model which will act as Wendy Addams
- 
 Wednesday is an American Gothic coming-of-age supernatural mystery comedy 
 thriller television series based on the character Wednesday Addams 
 by Charles Addams.
 
+# Here are instructions how to use ModelFile:
+
     https://github.com/ollama/ollama/blob/main/docs/modelfile.md
 
+# Here we create AI Model which will act as Wendy Addams
+ 
 I do use llama3.2:3b image. You can read about it here:
     https://ollama.com/library/llama3.2 
 
