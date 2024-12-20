@@ -1,4 +1,4 @@
-```plaintext
+
   
     W   W     EEEEE    N   N    DDDD    Y   Y
     W   W     E        NN  N    D   D    Y Y
@@ -32,9 +32,12 @@ Before pressing the Mic button, make sure to select the Voice Input Language. If
 
 
 Requirements:
+
 Python 3.9.21 (This is what I used, did not test with other versions)
+
 Docker or Python virtual environment (venv)
-ollama server with llama3.2 image (or whatever image you like)
+
+Ollama server with llama3.2 image (or whatever image you like)
 
     Project Structure:
     .
@@ -122,4 +125,4 @@ To stop the container and/or perform cleanup, use the following commands:
     #Optional: Clean Up Unused Images:
     docker image prune
 
-```
+
