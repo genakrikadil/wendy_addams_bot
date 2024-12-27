@@ -6,6 +6,8 @@
     WW WW     E        N  NN    D   D     Y
     W   W     EEEEE    N   N    DDDD      Y
 
+![Screenshot](bot-screenshot.jpg)
+
 # Dedication
 
 This project is dedicated to my lovely daughter, Katherine, whose enthusiasm for Wendy Addams has inspired this creation. Katherine, your love for Wendy’s unique charm and wit has brought this fun idea to life. I hope this chatbot brings you as much joy as Wendy Addams has brought to your heart.
