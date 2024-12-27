@@ -17,9 +17,9 @@ def is_hallucination(response: str) -> bool:
     """
     hallucination_indicators = [
         "I cannot provide information",
-        "I can't fulfill requests",
-        "I can't provide"
-
+        "I can't provide",
+        "I cannot fulfill requests",
+        "I can't fulfill requests"
     ]
     result=any(indicator in response for indicator in hallucination_indicators)
     # Check if any of the hallucination indicators are in the response

@@ -95,7 +95,7 @@ class LlamaChat:
                 model_response = response.json().get("response", "No response received from the model.")
                 #check if model hallucinated
                 #if so- remove 2 last records from the history- last request and previous
-                #ollama response, otherwise add history
+                #ollama response, otherwise add the message to the history 
                 if is_hallucination(model_response):
                     model_response="Let's talk about something else."
                     if len(self.history) > 2:

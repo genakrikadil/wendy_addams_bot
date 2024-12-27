@@ -54,6 +54,7 @@ Ollama server with llama3.2 image (or whatever image you like)
     │   └── styles.css
     ├── app.py
     ├── ask_llama.py
+    ├── hallucination.py
     ├── render_html.py
     ├── translate.py
     ├── requirements.txt
