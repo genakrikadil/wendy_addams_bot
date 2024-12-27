@@ -6,7 +6,7 @@
     WW WW     E        N  NN    D   D     Y
     W   W     EEEEE    N   N    DDDD      Y
 
-![Screenshot](bot-screenshot.jpg)
+![Screenshot](https://github.com/genakrikadil/wendy_addams_bot/bot-screenshot.jpg)
 
 # Dedication
 
