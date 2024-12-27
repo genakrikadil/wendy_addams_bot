@@ -5,6 +5,7 @@ from translate import gtranslate, gtranslate_lang_detect
 from render_html import render_html
 from ask_llama import LlamaChat
 from datetime import timedelta
+from book_of_psalms import psalms
 
 app = Flask(__name__, static_folder='static')
 CORS(app)
@@ -41,9 +42,22 @@ def respond():
             response = user_input
         else:
             response = gtranslate(user_input, language, "en")
-
+        ######### Psalms from Book of King Solomon ########
+        reply_text, reply_bool = psalms(response)
+        if reply_bool:
+            respond_html = render_html(reply_text)
+            return respond_html
+            #print(reply_text)
+        ############# end of Book of Psalms #######################
         # Get a response from LlamaChat
         bot_response = chat.ask_llama(response)
+
+        # optional /* BETA */ we translate ollama response (en) to 
+        # pre-defined language, russian (ru) for example 
+        #response = gtranslate(bot_response, "en", "ru")
+        #un-comment line below.
+        #bot_response=response
+        ######
 
         # Render the response in HTML format
         respond_html = render_html(bot_response)

@@ -52,12 +52,15 @@ Ollama server with llama3.2 image (or whatever image you like)
     │   ├── chat_interface.htm
     │   ├── script.js
     │   └── styles.css
-    ├── app.py
-    ├── ask_llama.py
-    ├── hallucination.py
-    ├── render_html.py
-    ├── translate.py
-    ├── requirements.txt
+    │
+    ├── app.py (this is the "main" Programm)
+    ├── ask_llama.py (Interface to ollama server)
+    ├── hallucination.py (workaround for ollama glitches)
+    ├── book_of_psalms.py (RAG: reads Psalm if asked)
+    ├── Psalms.json (The Book of Psalms)
+    ├── render_html.py (convert bot response into HTML)
+    ├── translate.py (Translates user input into English)
+    ├── requirements.txt (to give to PIP)
     ├── Dockerfile
     ├── docker-compose.yml
     └── README.md
@@ -137,11 +140,14 @@ To stop the container and/or perform cleanup, use the following commands:
 #Updates:
 
     Dec 27 2024: 
-    -Fixed Wednesday model behaviour
+    -Improved the Wednesday model's behavior: Adjusted her responses to be more friendly and approachable.
     -Added a module to manage and minimize model hallucinations, ensuring they do
     not "pollute" the chat history. The issue occurred when the model responded 
     with content related to "illegal activities." That response was saved in the 
     chat history, causing the model to react in the next step with statements like,
     "I cannot provide information or guidance." A special mechanism has now been 
     implemented to prevent this behavior.
+    -Cleaning "User:" in ollama responces
+    -Added the Book of Psalms: Simply ask Wendy to read a specific Psalm (e.g., Psalm <number>), and it will do so seamlessly. Someone may use this idea to 
+    add another "quick and dirty" RAG implementation.
 

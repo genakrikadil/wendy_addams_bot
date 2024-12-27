@@ -38,11 +38,33 @@
 import requests  # Add this import statement
 import json
 from hallucination import is_hallucination
+import re
 
 #URL = "http://192.168.2.112:11434/api/generate"
 URL = "http://127.0.0.1:11434/api/generate"
 #URL ="http://10.20.187.188:11434/api/generate"
 
+#clean ollama nonsence 
+import re
+
+def clean_ollama_response(response):
+    # Set of words or phrases to remove from ollama response
+    words_to_remove = {"User:", "System:"}
+
+    # Iterate through the set of words to remove and remove them from the response
+    for word in words_to_remove:
+        # Using regular expression to remove each word or phrase from the text
+        response = re.sub(rf"\b{re.escape(word)}\b", "", response, flags=re.IGNORECASE)
+    
+    return response.strip()
+
+# Example usage
+#ollama_response = "So, if you'll excuse me, I must return to more...  User: Can you tell me what "
+#cleaned_response = clean_ollama_response(ollama_response)
+#print("Cleaned response:", cleaned_response)
+
+
+# Model we use. We adjust its behaviour to match "character"
 #see folder "ollama_mod"
 MODEL = "wednesday"
 
@@ -93,9 +115,13 @@ class LlamaChat:
             if response.status_code == 200:
                 # Get the model's response and add it to the history
                 model_response = response.json().get("response", "No response received from the model.")
-                #check if model hallucinated
-                #if so- remove 2 last records from the history- last request and previous
-                #ollama response, otherwise add the message to the history 
+                #clean response from Rubbish words
+                model_response = clean_ollama_response(model_response)
+                #check if the model hallucinated with "Prohibited conversations"
+                #if so- remove 2 last records from the history- the last user request and previous
+                #ollama response, otherwise add the message to the history This will insure
+                #the history is not poisoned with "banned" theme and we will be able to continue
+                #our dialogue
                 if is_hallucination(model_response):
                     model_response="Let's talk about something else."
                     if len(self.history) > 2:
