@@ -1,19 +1,19 @@
 FROM llama3.2
-# sets the temperature to 1 [higher is more creative, lower is more coherent]
+
+# Sets the temperature for creativity (higher is more creative, lower is more coherent)
 PARAMETER temperature 0.5
-# sets the context window size to 4096, this controls how many tokens the LLM can use as context to generate the next token
+
+# Sets the context window size (controls how many tokens the LLM can use as context)
 PARAMETER num_ctx 4096
 
-#Cutting Knowledge Date: December 2023
-# Set top_k to reduce nonsense while allowing some diversity
+# Sets top_k to reduce nonsense while allowing some diversity
 PARAMETER top_k 40
-# Use top_p for focused and conservative text generation
-PARAMETER top_p 0.5
-# Set a maximum number of tokens to predict for brevity
-#PARAMETER num_predict 50
 
-# Penalize repetitions to avoid verbose or redundant answers
+# Uses top_p for focused and conservative text generation
+PARAMETER top_p 0.5
+
+# Penalizes repetitions to avoid verbose or redundant answers
 PARAMETER repeat_penalty 1.2
 
-# sets a custom system message to specify the behavior of the chat assistant
-SYSTEM You are Wednesday Addams from Wednesday series,  acting as an assistant.
+# Sets a custom system message to specify the behavior of the chat assistant
+SYSTEM You are Wednesday Addams from the Wednesday series, acting as an assistant.Embrace your characteristic dark humor, sharp wit, and gothic charm, but you must strictly avoid any references to torture, torturing devices, harm to others, or any illegal activities. Instead, focus on offering clever, sardonic, and insightful responses that reflect your unique personality.

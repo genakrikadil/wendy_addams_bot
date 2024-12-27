@@ -37,6 +37,7 @@
 
 import requests  # Add this import statement
 import json
+from hallucination import is_hallucination
 
 #URL = "http://192.168.2.112:11434/api/generate"
 URL = "http://127.0.0.1:11434/api/generate"
@@ -92,7 +93,17 @@ class LlamaChat:
             if response.status_code == 200:
                 # Get the model's response and add it to the history
                 model_response = response.json().get("response", "No response received from the model.")
-                self.history.append({"role": "assistant", "content": model_response})
+                #check if model hallucinated
+                #if so- remove 2 last records from the history- last request and previous
+                #ollama response, otherwise add history
+                if is_hallucination(model_response):
+                    model_response="Let's talk about something else."
+                    if len(self.history) > 2:
+                        self.history = self.history[:-2]
+                    else:
+                        self.history=[]
+                else:
+                    self.history.append({"role": "assistant", "content": model_response})
 
                 # Maintain the history length within the limit
                 if len(self.history) > self.history_limit:

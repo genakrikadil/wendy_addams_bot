@@ -126,6 +126,9 @@ To stop the container and/or perform cleanup, use the following commands:
         docker rmi -f <image_id>
 
 #Optional: Clean Up Unused Images:
-    docker image prune
+        docker image prune
 
-
+#Updates:
+    Dec 27 2024: 
+    -Fixed Wednesday model behaviour
+    -Added a module to manage and minimize model hallucinations, ensuring they do not "pollute" the chat history. The issue occurred when the model responded with content related to "illegal activities." That response was saved in the chat history, causing the model to react in the next step with statements like, "I cannot provide information or guidance." A special mechanism has now been implemented to prevent this behavior.
