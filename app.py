@@ -11,7 +11,7 @@ app = Flask(__name__, static_folder='static')
 CORS(app)
 
 # Set a secret key for session management
-app.secret_key = 'your_secret_key_here'
+app.secret_key = 'my_very_secret_key_is_here'
 
 # Set the session timeout duration
 app.permanent_session_lifetime = timedelta(minutes=30)

@@ -63,10 +63,17 @@ def psalms(query):
         return psalm_html, True
     else:
         return query, False
-##### here how you use it#########
+
+
+##### Example how you call it #########
 if __name__ == "__main__":
+    
     query = "What is Psalm 13 about?"
+
+    #call the function
     reply_text, reply_bool = psalms(query)
+
+    #print the result
     if reply_bool:
         print(reply_text)
     else:
