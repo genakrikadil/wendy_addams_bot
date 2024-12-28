@@ -141,17 +141,12 @@ To stop the container and/or perform cleanup, use the following commands:
 
 #Updates:
 
-    Dec 27 2024: 
-    -Improved the Wednesday model's behavior: Adjusted her responses 
-    to be more friendly and approachable.
+Dec 27 2024: 
+-Improved the Wednesday model's behavior: Adjusted her responses to be more friendly and approachable.
 
-    -Added a module to manage and minimize model hallucinations, 
-    ensuring they do not "pollute" the chat history. The issue occurred when the model responded with content related to "illegal activities." That response was saved in the chat history, causing the model to react in the next step with statements like, "I cannot provide information or guidance." A special mechanism has now been 
-    implemented to prevent this behavior.
+-Added a module to manage and minimize model hallucinations, ensuring they do not "pollute" the chat history. The issue occurred when the model responded with content related to "illegal activities." That response was saved in the chat history, causing the model to react in the next step with statements like, "I cannot provide information or guidance." A special mechanism has now been implemented to prevent this behavior.
     
-    -Cleaning "User:" in ollama responces
+-Cleaning "User:" in ollama responces
     
-    -"Added the Book of Psalms Feature: Simply ask Wendy to read a specific Psalm (e.g., Psalm <number>), and she will do so
-    effortlessly. This implementation might also inspire others to add
-    similar 'quick and effective' RAG features."
+-Added the Book of Psalms Feature: Simply ask Wendy to read a specific Psalm (e.g., Psalm <number>), and she will do soeffortlessly. This implementation might also inspire others to add similar 'quick and effective' RAG features.
 
