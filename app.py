@@ -72,7 +72,8 @@ def respond():
 
 @app.route('/')
 def index():
-    return send_from_directory(app.static_folder, 'chat_interface.html')
+    #return send_from_directory(app.static_folder, 'chat_interface.html')
+    return send_from_directory(app.static_folder, 'index.html')
 
 
 @app.before_request

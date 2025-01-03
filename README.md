@@ -47,13 +47,22 @@ Ollama server with llama3.2 image (or whatever image you like)
     │   ├── README.md
     │   └── wednesday
     ├── static/
-    │   ├── pics/
+    │   ├── pics/   (used for full-screen chat)
     │   │   ├── wendy_small.png
     │   │   └── wendy.jpg
+    │   ├── icons/  (used for widget version)
+    │   │   ├── wendy_small.png
+    │   │   ├── mic.png
+    │   │   ├── mic-record.png
+    │   │   ├── thinking.gif
+    │   │   └── wendy.jpg
     │   ├── README.md   
-    │   ├── chat_interface.htm
-    │   ├── script.js
-    │   └── styles.css
+    │   ├── chatInterface.htm (full screeen interface)
+    │   ├── chatWidget.htm (widget interface)
+    │   ├── index.htm    (select widget or full screen to try)
+    │   ├── script.js (used for full screeen)
+    │   ├── chatWidget.js (this is widget itself)
+    │   └── styles.css (used for full screen interface)
     │
     ├── app.py (this is the "main" Programm)
     ├── ask_llama.py (Interface to ollama server)

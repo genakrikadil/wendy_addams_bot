@@ -26,7 +26,8 @@ async function sendMessage() {
     const thinkingIndicator = document.createElement('div');
     thinkingIndicator.id = 'thinkingIndicator';
     thinkingIndicator.className = 'chat-message bot-message';
-    thinkingIndicator.textContent = '🤔 Thinking...';
+    thinkingIndicator.innerHTML = '<img src="/static/pics/thinking.gif" alt="Thinking..." style="width: 40px; height: auto; vertical-align: middle;"> Thinking...';
+    //thinkingIndicator.textContent = '🤔 Thinking...';
     chatContainer.appendChild(thinkingIndicator);
     chatContainer.scrollTop = chatContainer.scrollHeight; // Scroll to the bottom
 
