@@ -159,3 +159,6 @@ Dec 27 2024:
     
 -Added the Book of Psalms Feature: Simply ask Wendy to read a specific Psalm (e.g., Psalm <number>), and she will do soeffortlessly. This implementation might also inspire others to add similar 'quick and effective' RAG features.
 
+Jan 03 2024
+-added widget version (I think I need to update docker files to run it in docker)
+
