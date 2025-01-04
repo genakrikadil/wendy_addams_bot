@@ -1,78 +1,145 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>My Webpage</title>
-  <!-- meta charset="UTF-8 MUST be present otherwise Mic, Widget and Rec buttons are 
-  not shown properly -->
-  <meta charset="UTF-8">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nevermore Academy</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Georgia', serif;
+            background-color: #0d0d0d;
+            color: #d4d4d4;
+            line-height: 1.6;
+        }
+        header {
+            background: linear-gradient(90deg, #111, #222);
+            padding: 20px 10px;
+            text-align: center;
+            border-bottom: 3px solid #5a1f1f;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        header img {
+            max-width: 150px; /* Adjust size as needed */
+            height: auto;
+            margin-bottom: 10px;
+        }
+        header h1 {
+            font-size: 3rem;
+            font-weight: bold;
+            letter-spacing: 2px;
+            color: #e5c100;
+            text-shadow: 2px 2px 4px #000;
+        }
+        nav {
+            text-align: center;
+            margin: 10px 0;
+        }
+        nav a {
+            color: #333;
+            text-decoration: none;
+            margin: 0 15px;
+            font-size: 1.1rem;
+            transition: color 0.3s, border-bottom 0.3s;
+            border-bottom: 2px solid transparent;
+        }
+        nav a:hover {
+            color: #f4e1b1;
+            border-bottom: 2px solid #5a1f1f;
+        }
+        .hero {
+            background: url('/static/icons/nevermoreBG.jpg') no-repeat center center/cover;
+            height: 60vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-shadow: 2px 2px 8px #000;
+        }
+        .hero h2 {
+            font-size: 3rem;
+            color: #f4e1b1;
+            text-transform: uppercase;
+        }
+        .content {
+            padding: 20px;
+            max-width: 900px;
+            margin: 30px auto;
+            background: #111;
+            border: 1px solid #333;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.7);
+            border-radius: 8px;
+        }
+        .content h3 {
+            color: #e5c100;
+            border-bottom: 2px solid #5a1f1f;
+            padding-bottom: 5px;
+            margin-bottom: 10px;
+        }
+        .content p {
+            font-size: 1rem;
+            margin-bottom: 20px;
+        }
+        footer {
+            text-align: center;
+            padding: 20px 10px;
+            background: linear-gradient(90deg, #111, #222);
+            border-top: 3px solid #5a1f1f;
+        }
+        footer p {
+            margin: 0;
+            color: #666;
+            font-size: 0.9rem;
+        }
+        footer a {
+            color: #333;
+            text-decoration: none;
+        }
+        footer a:hover {
+            text-decoration: underline;
+        }
+    </style>
 </head>
 <body>
-  <!-- Your other HTML content here -->
-
-    <h1>Why AI is Good</h1>
-
-    <p>Artificial intelligence (AI) is a transformative force that has the potential to revolutionize industries, enhance human capabilities, and address some of the world's most pressing challenges. Its growth in recent years has opened up countless possibilities for improving efficiency, productivity, and quality of life. Below are some compelling reasons why AI is good and how it is benefiting society across various domains.</p>
-
-    <h2>1. Automation and Efficiency</h2>
-    <p>One of the most significant advantages of AI is its ability to automate tasks, increasing efficiency across various sectors. In industries like manufacturing, AI-driven robots can perform repetitive tasks with higher precision and speed than humans, reducing the risk of errors and allowing human workers to focus on more complex, creative, or managerial responsibilities. AI can handle large volumes of data and perform intricate computations in real-time, accelerating workflows that would otherwise take hours or even days. This leads to faster production cycles, improved resource allocation, and reduced operational costs.</p>
-
-    <p>In the service industry, AI-powered chatbots and virtual assistants have revolutionized customer support by providing quick and accurate responses to customer inquiries. These AI systems can analyze customer queries, identify patterns, and offer personalized solutions 24/7, improving customer satisfaction while reducing the need for human intervention.</p>
-
-    <h2>2. Advancements in Healthcare</h2>
-    <p>AI's application in healthcare is a prime example of how this technology is changing lives for the better. Machine learning algorithms are helping doctors and medical researchers analyze vast amounts of medical data to identify patterns, predict disease outcomes, and suggest treatment plans. AI has shown exceptional promise in diagnosing diseases such as cancer, where algorithms can analyze medical images with remarkable accuracy, sometimes outperforming human experts.</p>
-
-    <p>AI is also improving drug discovery by processing complex biological data, identifying potential drug candidates, and predicting their effectiveness. This accelerates the development of new treatments and medications, potentially saving lives and reducing the time it takes to bring new therapies to market.</p>
-
-    <p>Additionally, AI is contributing to personalized medicine, tailoring treatment plans based on an individual's genetic makeup and health data. This individualized approach can lead to more effective treatments, reducing adverse side effects and improving patient outcomes.</p>
-
-    <h2>3. Enhancing Education</h2>
-    <p>AI is transforming education by providing personalized learning experiences and making education more accessible to people worldwide. AI-driven platforms can assess a student's learning style and progress, adapting the curriculum to suit their needs. For example, if a student struggles with a particular concept, AI systems can offer additional resources, exercises, or alternative explanations, helping them grasp the topic at their own pace.</p>
-
-    <p>AI-powered tools also assist educators by automating administrative tasks such as grading and scheduling, allowing teachers to focus more on interacting with students and improving the learning experience. Moreover, AI-based tutoring systems can provide students with one-on-one support, even outside of regular classroom hours.</p>
-
-    <p>In underserved or remote areas, AI-enabled platforms can bridge educational gaps by providing access to quality learning resources and instruction that might not be available locally. This democratizes education, offering equal opportunities for all students, regardless of their location or socioeconomic background.</p>
-
-    <h2>4. Boosting Creativity</h2>
-    <p>AI is not just about automating tasks or solving problems; it can also enhance human creativity. In the arts and entertainment industries, AI tools are being used to generate music, art, literature, and even video games. AI algorithms can analyze existing works to understand patterns and trends, allowing them to create new pieces that are innovative yet grounded in established styles.</p>
-
-    <p>For instance, AI-powered music composition tools can assist musicians in generating new melodies and harmonies, while AI-driven painting tools can help artists explore new artistic techniques. In writing, AI can provide authors with ideas, plot suggestions, or even complete drafts, serving as a creative partner in the writing process.</p>
-
-    <p>Moreover, AI has been instrumental in improving film and video production. From special effects and animation to scriptwriting and video editing, AI tools help streamline the creative process, enabling artists to focus on the more imaginative aspects of their work.</p>
-
-    <h2>5. Environmental Impact</h2>
-    <p>AI is also playing a crucial role in addressing environmental issues and promoting sustainability. AI systems are being used to monitor and predict environmental changes, such as climate patterns, air quality, and deforestation. This allows scientists and policymakers to make data-driven decisions aimed at mitigating the impacts of climate change and preserving natural resources.</p>
-
-    <p>For example, AI-powered algorithms are helping optimize energy consumption in buildings and transportation systems, reducing carbon emissions and lowering energy costs. In agriculture, AI is being used to monitor crop health, predict yields, and optimize irrigation, leading to more sustainable farming practices and less waste.</p>
-
-    <p>AI is also being used in waste management and recycling. AI-powered robots can sort and process recyclable materials more efficiently than humans, ensuring that valuable resources are reused and reducing the environmental impact of landfills.</p>
-
-    <h2>6. Improving Safety and Security</h2>
-    <p>AI has the potential to improve safety and security in many areas of life. In transportation, AI is making self-driving cars a reality, reducing traffic accidents and fatalities caused by human error. AI-powered systems can monitor traffic patterns, detect hazards, and respond faster than human drivers, contributing to safer roadways.</p>
-
-    <p>In cybersecurity, AI is being used to detect and respond to threats in real-time. AI algorithms can analyze vast amounts of data for unusual patterns or anomalies, identifying potential cyberattacks before they can cause significant damage. This enhances data protection and helps safeguard critical infrastructure from malicious actors.</p>
-
-    <p>AI is also improving safety in workplaces, especially in hazardous industries such as mining, construction, and oil drilling. AI-powered robots and drones can perform dangerous tasks, such as inspecting machinery or exploring dangerous environments, reducing the risk of injury or death for human workers.</p>
-
-    <h2>7. Economic Growth and Innovation</h2>
-    <p>AI is driving economic growth by fostering innovation across industries. The ability to analyze data at scale, identify trends, and predict future outcomes is opening new avenues for businesses to optimize their operations and deliver better products and services to customers.</p>
-
-    <p>AI has led to the creation of entirely new industries, such as AI-driven software development, robotics, and autonomous vehicles. These industries are generating jobs and contributing to economic expansion. Moreover, AI is enhancing the productivity of existing sectors by improving decision-making processes, streamlining workflows, and enabling companies to stay competitive in an increasingly globalized market.</p>
-
-    <p>The widespread adoption of AI is also encouraging investment in research and development, further fueling innovation and progress. Companies that embrace AI are more likely to attract talent, build cutting-edge products, and capture market share, creating a dynamic and competitive economy.</p>
-
-    <h2>8. Social Good</h2>
-    <p>AI is being used to address social challenges, from improving healthcare access in underserved regions to enhancing disaster response efforts. AI-powered systems can analyze vast amounts of data to predict natural disasters, such as earthquakes or hurricanes, allowing governments and organizations to take proactive measures to minimize damage and loss of life.</p>
-
-    <p>In poverty-stricken areas, AI is helping provide critical services, such as education, healthcare, and financial inclusion. AI-powered mobile apps are enabling people to access banking services, receive medical consultations, and even participate in online education programs, helping to reduce inequality and improve quality of life.</p>
-
-    <p>AI is also aiding in humanitarian efforts by improving supply chain logistics, helping organizations distribute aid more efficiently during crises, and ensuring that resources reach those in need in a timely manner.</p>
-
-    <h2>Conclusion</h2>
-    <p>AI is a powerful tool that is transforming society in numerous positive ways. From enhancing productivity and efficiency to advancing healthcare and fostering creativity, AI is improving lives and addressing complex global challenges. As AI continues to evolve, its potential for positive impact will only grow, creating new opportunities for innovation, sustainability, and social good. The future of AI is bright, and its benefits are far-reaching, making it an essential part of the technological landscape in the 21st century.</p>
-
-  
-<!--------End of my own HTML content--->
-  <!-- Add the chat widget -->
-  <script src="/static/chatWidget.js"></script>
-</body>
+    <header>
+        <img src="/static/icons/nevermore_academy.png" alt="Nevermore Academy Logo">
+        <h1>Nevermore Academy</h1>
+    </header>
+    <nav>
+        <a href="#about">About</a>
+        <a href="#faculty">Faculty</a>
+        <a href="#events">Events</a>
+        <a href="#contact">Contact</a>
+    </nav>
+    <div class="hero">
+        <h2>Embrace the Shadows</h2>
+    </div>
+    <div class="content">
+        <section id="about">
+            <h3>About Us</h3>
+            <p>Founded centuries ago, Nevermore Academy has become a sanctuary for those who are different, unique, and extraordinary. Nestled in the heart of a misty valley, the academy combines timeless traditions with an appreciation for the unconventional. Students at Nevermore are encouraged to embrace their individuality and explore the hidden depths of their abilities.</p>
+            <p>The sprawling campus includes grand gothic halls, shadowy libraries filled with ancient texts, and hidden passageways that whisper of secrets waiting to be uncovered. It is a place where the mysterious meets the magnificent, and every student is a part of the ongoing legend.</p>
+        </section>
+        <section id="faculty">
+            <h3>Our Faculty</h3>
+            <p>The faculty at Nevermore Academy is composed of some of the most brilliant and enigmatic minds from around the world. Each member brings a wealth of knowledge and a touch of eccentricity to their teaching. Whether it's Professor Elspeth Thornwood, who specializes in cryptic languages, or Dr. Malachi Ravenstone, an expert in alchemical transmutations, the faculty is dedicated to guiding students through an unparalleled academic journey.</p>
+            <p>Beyond their academic prowess, the professors at Nevermore are mentors who inspire and challenge their students to look beyond the mundane and dare to dream of the impossible. They embody the spirit of Nevermore: fearless, curious, and endlessly creative.</p>
+        </section>
+        <section id="events">
+            <h3>Upcoming Events</h3>
+            <p>Nevermore Academy is renowned for its captivating events that blend tradition with a sense of mystery and adventure. Highlights of the upcoming season include:</p>
+            <ul>
+                <li><strong>The Midnight Gala:</strong> A formal event held under the light of the full moon, where students showcase their unique talents and artistry.</li>
+                <li><strong>The Annual Gargoyle Carving Competition:</strong> A test of creativity and precision as students design and craft their own gothic masterpieces.</li>
+                <li><strong>The Enigma Hunt:</strong> A thrilling puzzle-solving event that takes participants deep into the academy's labyrinthine catacombs.</li>
+            </ul>
+            <p>Each event is a celebration of individuality and ingenuity, creating memories that last a lifetime.</p>
+        </section>
+    </div>
+    <footer>
+        <p>&copy; 2025 Nevermore Academy. All Rights Reserved. <a href="#">Privacy Policy</a></p>
+    </footer>
+    <script src="/static/chatWidget.js"></script>
+  </body>
 </html>

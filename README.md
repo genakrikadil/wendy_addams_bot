@@ -53,6 +53,8 @@ Ollama server with llama3.2 image (or whatever image you like)
     │   ├── icons/  (used for widget version)
     │   │   ├── wendy_small.png
     │   │   ├── mic.png
+    │   │   ├── nevermore_academy.png (used in chatWidget.html)
+    │   │   ├── nevermoreBG.jpg (used in chatWidget.html)
     │   │   ├── mic-record.png
     │   │   ├── thinking.gif
     │   │   └── wendy.jpg
@@ -157,8 +159,8 @@ Dec 27 2024:
     
 -Cleaning "User:" in ollama responces
     
--Added the Book of Psalms Feature: Simply ask Wendy to read a specific Psalm (e.g., Psalm <number>), and she will do soeffortlessly. This implementation might also inspire others to add similar 'quick and effective' RAG features.
+-Added the Book of Psalms Feature: Simply ask Wendy to read a specific Psalm (e.g., Psalm <number>), and she will do so effortlessly. This implementation might also inspire others to add similar 'quick and effective' RAG features.
 
 Jan 03 2024
--added widget version (I think I need to update docker files to run it in docker)
+-added widget version, added index.html you can call full-screen or widget versions of the bot from this page.
 

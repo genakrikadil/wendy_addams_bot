@@ -12,6 +12,8 @@ COPY ./static /static/
 
 COPY ./static/pics /static/pics/
 
+COPY ./static/icons /static/icons/
+
 
 EXPOSE 5555
 
