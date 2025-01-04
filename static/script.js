@@ -1,8 +1,7 @@
 const chatContainer = document.getElementById('chatContainer');
 const userInput = document.getElementById('userInput');
 //where is backend hosted?
-//const baseUrl = window.location.origin;
-const baseUrl = 'http://localhost:5555';
+const baseUrl = window.location.origin;
 let recognition;
 let isRecording = false;
 
@@ -53,7 +52,7 @@ async function sendMessage() {
 
     } catch (error) {
         console.error('Error fetching response:', error);
-        addMessage(`Sorry, there was an error on backend: ${error.message}`, 'bot');
+        addMessage(`Can not reach backend ${baseUrl} error: ${error.message}`, 'bot');
     } finally {
         // Remove the "Thinking..." indicator after receiving the response or in case of an error
         if (thinkingIndicator) {

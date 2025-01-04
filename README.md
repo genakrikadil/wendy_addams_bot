@@ -101,22 +101,23 @@ Change:
     Optional:
     in /static/*.js files you may find the line:
 
-        //this is where backend is listening
-        const baseUrl = 'http://localhost:5555'
+        # this is where we will call the backend, assuming that 
+        # web server for HTML/JS content and web server for 
+        # backed located on the same IP address. 
+        const baseUrl = window.location.origin;
 
-    Be sure it matches your scenario. Also please do not forget that "localhost" on docker is not the same as "localhost" on the host itself and "localhost" in another docker container. You got an idea right?    
 
 4) Build and Run with Docker:
 
 Make sure you're in the project root directory (where the Dockerfile is located). Then, execute the following commands to build and run the Docker container:
 
-    #Build the Docker Image:
+    # Build the Docker Image:
     docker build -t wendy_bot .
 
-    #Verify the Image:
+    # Verify the Image:
     docker images
 
-    #Run the Docker Container (Detached Mode):
+    # Run the Docker Container (Detached Mode):
     docker run -d -p 5555:5555 wendy_bot
 
 This will start the container, and you can access the chatbot via:
@@ -129,46 +130,52 @@ You can stop the container at any time.
 
 To stop the container and/or perform cleanup, use the following commands:
 
-#Verify Running Containers:
+# Verify Running Containers:
 
     docker ps | grep wendy_bot
 
-#Stop the Container:
+# Stop the Container:
 
         docker stop <container_id>
 
-#General Docker Cleanup Commands:
+# General Docker Cleanup Commands:
     
-#Remove a Stopped Container:
+# Remove a Stopped Container:
 
         docker ps -a | grep wendy
         docker stop <container_id>
         docker rm <container_id>
 
-#Remove an Image:
+# Remove an Image:
 
         docker images | grep wendy
         docker rmi <image_name_or_id>
 
-#Force Removal of an Image:
+# Force Removal of an Image:
 
         docker rmi -f <image_id>
 
-#Optional: Clean Up Unused Images:
+# Optional: Clean Up Unused Images:
 
         docker image prune
 
-#Updates:
+# Updates:
 
 Dec 27 2024: 
--Improved the Wednesday model's behavior: Adjusted her responses to be more friendly and approachable.
 
--Added a module to manage and minimize model hallucinations, ensuring they do not "pollute" the chat history. The issue occurred when the model responded with content related to "illegal activities." That response was saved in the chat history, causing the model to react in the next step with statements like, "I cannot provide information or guidance." A special mechanism has now been implemented to prevent this behavior.
-    
--Cleaning "User:" in ollama responces
-    
--Added the Book of Psalms Feature: Simply ask Wendy to read a specific Psalm (e.g., Psalm <number>), and she will do so effortlessly. This implementation might also inspire others to add similar 'quick and effective' RAG features.
+- Improved the Wednesday model's behavior: Adjusted her responses to be more friendly and approachable.
 
-Jan 03 2024
--added widget version, added index.html you can call full-screen or widget versions of the bot from this page.
+- Added a module to manage and minimize model hallucinations, ensuring they do not "pollute" the chat history. The issue occurred when the model responded with content related to "illegal activities." That response was saved in the chat history, causing the model to react in the next step with statements like, "I cannot provide information or guidance." A special mechanism has now been implemented to prevent this behavior.
+    
+- Cleaning "User:" in ollama responces
+    
+- Added the Book of Psalms Feature: Simply ask Wendy to read a specific Psalm (e.g., Psalm <number>), and she will do so effortlessly. This implementation might also inspire others to add similar 'quick and effective' RAG features.
+
+Jan 03 2025
+
+- added widget version, added index.html you can call full-screen or widget versions of the bot from this page.
+
+Jan 04 2025
+
+- updated 'Docker' version (bug fixes)
 

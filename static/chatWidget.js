@@ -248,8 +248,9 @@
     // Insert code to interact with backend
     //
     let backend_response = 'bot says hi!'; // Declare backend_response variable
-    //const baseUrl = window.location.origin;
-    const baseUrl = 'http://localhost:5555';
+    //this is where we will call the backend
+    const baseUrl = window.location.origin;
+  
   
     // call backend *******************
     try {
@@ -267,7 +268,7 @@
     }
 } catch (error) {
     console.error('Error fetching response:', error);
-    backend_response = `Sorry, there was an error on the backend: ${error.message}`;
+    backend_response = `Can not reach backend ${baseUrl} error: ${error.message}`;
 }
     // ********************************
     // end of * * * BACKEDND CALL * * *  
