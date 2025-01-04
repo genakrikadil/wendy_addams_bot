@@ -13,10 +13,10 @@
         </select>
       </div>
       <div class="chat-body" id="chatBody">
-        <p>How can I help you?</p>
+        <p>Agent online. What brings you here?</p>
       </div>
       <div class="chat-footer">
-        <input type="text" id="chatInput" placeholder="Type a message..." />
+        <input type="text" id="chatInput" placeholder="Type a message or 'clear history'... " />
         <button id="voiceButton" aria-label="Start voice input">
           <img src="/static/icons/mic.png" />
         </button>
@@ -135,6 +135,7 @@
   .bot-message {
       background: #e9ecef;
       align-self: flex-start;
+      color: black;
   }
 
   .corner-image {
