@@ -103,7 +103,8 @@ Change:
 
         # this is where we will call the backend, assuming that 
         # web server for HTML/JS content and web server for 
-        # backed located on the same IP address. 
+        # backed located on the same IP address as frontend. 
+
         const baseUrl = window.location.origin;
 
 
@@ -169,7 +170,7 @@ Dec 27 2024:
     
 - Cleaning "User:" in ollama responces
     
-- Added the Book of Psalms Feature: Simply ask Wendy to read a specific Psalm (e.g., Psalm <number>), and she will do so effortlessly. This implementation might also inspire others to add similar 'quick and effective' RAG features.
+- Added the "Book of Psalms" Feature: Simply ask Wendy to read a specific Psalm (e.g. "Read me psalm 1" or "What is in Psalm 6?"), and she will do so effortlessly. This implementation might also inspire others to add similar 'quick and effective' RAG features.
 
 Jan 03 2025
 
