@@ -43,10 +43,10 @@ Ollama server with llama3.2 image (or whatever image you like)
 
 # Project Structure:
     .
-    ├── ollama_mod/
-    │   ├── README.md
-    │   └── wednesday
-    ├── static/
+    ├── ollama_mod/ (how to build ollama custom model)
+    │   ├── README.md (instructions)
+    │   └── wednesday (ModelFile)
+    ├── static/ (web server aka frontend)
     │   ├── pics/   (used for full-screen chat)
     │   │   ├── wendy_small.png
     │   │   └── wendy.jpg
@@ -59,9 +59,9 @@ Ollama server with llama3.2 image (or whatever image you like)
     │   │   ├── thinking.gif
     │   │   └── wendy.jpg
     │   ├── README.md   
-    │   ├── chatInterface.htm (full screeen interface)
-    │   ├── chatWidget.htm (widget interface)
-    │   ├── index.htm    (select widget or full screen to try)
+    │   ├── chatInterface.html (full screeen interface)
+    │   ├── chatWidget.html (widget interface)
+    │   ├── index.html    (select widget or full screen to try)
     │   ├── script.js (used for full screeen)
     │   ├── chatWidget.js (this is widget itself)
     │   └── styles.css (used for full screen interface)
@@ -70,13 +70,13 @@ Ollama server with llama3.2 image (or whatever image you like)
     ├── ask_llama.py (Interface to ollama server)
     ├── hallucination.py (workaround for ollama glitches)
     ├── book_of_psalms.py (RAG: reads Psalm if asked)
-    ├── Psalms.json (The Book of Psalms)
-    ├── render_html.py (convert bot response into HTML)
+    ├── Psalms.json (The Book of Psalms in json format)
+    ├── render_html.py (convert bot responses into HTML)
     ├── translate.py (Translates user input into English)
-    ├── requirements.txt (to give to PIP)
-    ├── Dockerfile
-    ├── docker-compose.yml
-    └── README.md
+    ├── requirements.txt (to give to PIP or docker)
+    ├── Dockerfile (to build docker file)
+    ├── docker-compose.yml (to build docker file)
+    └── README.md (this file)
 
 # How to Run:
 
