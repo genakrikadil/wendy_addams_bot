@@ -1,7 +1,8 @@
 const chatContainer = document.getElementById('chatContainer');
 const userInput = document.getElementById('userInput');
-const baseUrl = window.location.origin;
-
+//where is backend hosted?
+//const baseUrl = window.location.origin;
+const baseUrl = 'http://localhost:5555';
 let recognition;
 let isRecording = false;
 

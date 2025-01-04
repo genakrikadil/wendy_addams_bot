@@ -98,6 +98,14 @@ Change:
     URL = "http://127.0.0.1:11434/api/generate"
     to match the server IP/hostname, where Ollama is running. 
 
+    Optional:
+    in /static/*.js files you may find the line:
+
+        //this is where backend is listening
+        const baseUrl = 'http://localhost:5555'
+
+    Be sure it matches your scenario. Also please do not forget that "localhost" on docker is not the same as "localhost" on the host itself and "localhost" in another docker container. You got an idea right?    
+
 4) Build and Run with Docker:
 
 Make sure you're in the project root directory (where the Dockerfile is located). Then, execute the following commands to build and run the Docker container:

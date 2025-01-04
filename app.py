@@ -64,7 +64,7 @@ def respond():
 
     except Exception as e:
         print(f"Error: {e}")  # Debugging
-        bot_response = "An error occurred while processing your request. Please try again."
+        bot_response = f"An error occurred while processing your request. Please try again.{e}"
         respond_html = render_html(bot_response)
 
     return respond_html

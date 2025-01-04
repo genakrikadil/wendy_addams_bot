@@ -25,6 +25,7 @@
 
 import json
 import re
+import os
 
 # Load and preprocess the JSON data for quick access
 def load_psalms(json_file):
@@ -53,7 +54,13 @@ def get_psalm_text_html(preprocessed_data, chapter_number):
 
 # Main function to handle queries
 def psalms(query):
-    psalms_file = 'psalms.json'
+    current_path = os.getcwd()
+    psalms_file = current_path+'/Psalms.json'
+
+    #check if file exists
+    if not os.path.exists(psalms_file):
+        return "Psalms.json file not found.", True
+
     preprocessed_data = load_psalms(psalms_file)
     # Extract the Psalm number from the query using regex
     match = re.search(r"Psalm (\d+)", query, re.IGNORECASE)

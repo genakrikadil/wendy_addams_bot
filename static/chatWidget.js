@@ -219,30 +219,13 @@
     chatBody.scrollTop = chatBody.scrollHeight;
     }
     if (role == "bot") {
-      //const messageElement = document.createElement("p");
       const messageElement = document.createElement("div");
       messageElement.className = 'chat-message bot-message';
-      //messageElement.textContent = message;
       messageElement.innerHTML = message; // Use innerHTML instead of textContent
       chatBody.appendChild(messageElement);
       chatBody.scrollTop = chatBody.scrollHeight;
-      //#endregion
-      
-      //const botMessageDiv = document.createElement('div');
-      //  botMessageDiv.className = 'chat-message bot-message';
-      //  botMessageDiv.innerHTML = data; // Inject HTML content
-      //  chatContainer.appendChild(botMessageDiv);
-
-      //  chatContainer.scrollTop = chatContainer.scrollHeight; // Scroll to the bottom
-
-
-
-
     }
-
-
   }
-
   // Send message to the backend and get a response
   async function sendMessage() {
   const message = chatInput.value.trim();
@@ -265,7 +248,8 @@
     // Insert code to interact with backend
     //
     let backend_response = 'bot says hi!'; // Declare backend_response variable
-    const baseUrl = window.location.origin;
+    //const baseUrl = window.location.origin;
+    const baseUrl = 'http://localhost:5555';
   
     // call backend *******************
     try {
