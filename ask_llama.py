@@ -49,7 +49,7 @@ import re
 
 def clean_ollama_response(response):
     # Set of words or phrases to remove from ollama response
-    words_to_remove = {"User:", "System:"}
+    words_to_remove = {"User:", "System:","Assistant: Assistant:", "Assistant:"}
 
     # Iterate through the set of words to remove and remove them from the response
     for word in words_to_remove:
