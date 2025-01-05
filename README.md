@@ -175,7 +175,7 @@ Dec 27 2024:
 
 - Added a module to manage and minimize model hallucinations, ensuring they do not "pollute" the chat history. The issue occurred when the model responded with content related to "illegal activities." That response was saved in the chat history, causing the model to react in the next step with statements like, "I cannot provide information or guidance." A special mechanism has now been implemented to prevent this behavior.
     
-- Cleaning "User:" in ollama responces
+- Cleaning "User:" in ollama responces (see ask_llama.py)
     
 - Added the "Book of Psalms" Feature: Simply ask Wendy to read a specific Psalm (e.g. "Read me psalm 1" or "What is in Psalm 6?"), and she will do so effortlessly. This implementation might also inspire others to add similar 'quick and effective' RAG features.
 
@@ -186,4 +186,6 @@ Jan 03 2025
 Jan 04 2025
 
 - updated 'Docker' version (bug fixes)
+- cleaned "Assistant: Assistant:" in ollama responces (see ask_llama.py)
+
 
