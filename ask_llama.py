@@ -139,7 +139,7 @@ class LlamaChat:
             else:
                 return f"Something is not right with Ollama Server. Here is what she sad:<br><br>\n {response.status_code}: {response.text}"
         except Exception as e:
-            return f"Is Ollama server running? Here is Error I received:<br><br> \n {str(e)}"
+            return f"Is Ollama server running? <br> Here is Error I received:<br><br> \n {str(e)}"
 
 if __name__ == '__main__':
     chat = LlamaChat()
