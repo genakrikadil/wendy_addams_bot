@@ -6,7 +6,14 @@
     WW WW     E        N  NN    D   D     Y
     W   W     EEEEE    N   N    DDDD      Y
 
+# Full screen version
+
 ![Screenshot](https://github.com/genakrikadil/wendy_addams_bot/blob/main/bot-screenshot%20.jpg)
+
+# Widget verion
+
+![Screenshot](https://github.com/genakrikadil/wendy_addams_bot/blob/main/widget_screenshot.jpg)
+
 
 # Dedication
 
