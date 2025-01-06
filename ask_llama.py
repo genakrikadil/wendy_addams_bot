@@ -38,40 +38,27 @@
 import requests  # Add this import statement
 import json
 from hallucination import is_hallucination
+from model_change import analyze_and_change_model
+from book_of_psalms import psalms
+from render_html import render_html
 import re
-import version #type:ignore  here we put all global constants
-
-#URL = "http://192.168.2.112:11434/api/generate"
-URL = "http://127.0.0.1:11434/api/generate"
-#URL ="http://10.20.187.188:11434/api/generate"
-
-# Model we use. We adjust its behaviour to match "character"
-#see folder "ollama_mod"
-
-MODEL = "wednesday" 
+import globals #type:ignore  here we put all global constants
 
 #clean ollama nonsence 
 
 def clean_ollama_response(response):
     # Set of words or phrases to remove from ollama response
-    words_to_remove = {"User:", "System:","Assistant: Assistant:", "Assistant:"}
+    words_to_remove = {"User:", "System:", "Assistant:"}
 
-    # Iterate through the set of words to remove and remove them from the response
+    # Iterate through the set of words and remove them from the response
     for word in words_to_remove:
         # Using regular expression to remove each word or phrase from the text
         response = re.sub(rf"\b{re.escape(word)}\b", "", response, flags=re.IGNORECASE)
-    
     return response.strip()
-
-# Example usage
-#ollama_response = "So, if you'll excuse me, I must return to more...  User: Can you tell me what "
-#cleaned_response = clean_ollama_response(ollama_response)
-#print("Cleaned response:", cleaned_response)
-
 
 class LlamaChat:
     def __init__(self, history_limit=10):
-        self.url = URL  # Use the constant for the URL
+        self.url = globals.URL  # Use the constant for the URL
         self.headers = {"Content-Type": "application/json"}
         self.history = []  # Store conversation history
         self.history_limit = history_limit  # Set a maximum history limit
@@ -81,14 +68,46 @@ class LlamaChat:
         self.history = []
 
     def ask_llama(self, prompt):
-        # Check for a manual clear command
+        #######################################
+        # Check if it is command for backend
+        #######################################
+
+        # "psalm <psalm number>" command
+        reply_text, reply_bool = psalms(prompt)
+        if reply_bool:
+            # Add psalm to the history
+            self.history.append({"role": "user", "content": reply_text}) 
+            return reply_text
+                
+        # "clear history" command
         if prompt.lower() == "clear history":
             self.clear_history()
             return "Let's start new conversation."
-        # Check if asked for version
-        if prompt.lower() == "version":
-            return version.VERSION
         
+        # "version" command
+        if prompt.lower() == "version":
+            return globals.VERSION+" Model:"+globals.MODEL
+        
+        # "model:" command
+        prompt,changed=analyze_and_change_model(prompt)
+        if changed:
+            return prompt
+        
+        # "?" command
+        if prompt.lower() == "?":
+            return """ <h1>Available Commands</h1><br>
+            <b>psalm psalm_number</b>: Displays a Psalm from the Book of Psalms.<br>
+            <b>clear history</b>: Clears the chat history.<br>
+            <b>version</b>: Shows the code version and the name of the model in use.<br>
+            <b>model:name_of_the_model</b>: Switches to a specified AI model or lists available models.<br>
+            <br>
+            <b>Note:</b> The language selector dropdown affects only the Speech-to-Text functions. You can enter 
+            your question or statement in any supported language. Input will be recognized automatically, and 
+            the model will always respond in English."""
+        #######################################
+        # End of command processing
+        #######################################
+
         # Add the user's prompt to the history
         self.history.append({"role": "user", "content": prompt})
 
@@ -103,7 +122,7 @@ class LlamaChat:
 
         # Data payload for the API
         data = {
-            "model": MODEL,  # Use the constant for the model
+            "model": globals.MODEL,  # Use the constant for the model
             "prompt": full_prompt,
             "stream": False,
             "max_tokens":80,           # Limit to short answers
@@ -115,6 +134,7 @@ class LlamaChat:
         }
 
         try:
+            #print (data)
             response = requests.post(self.url, headers=self.headers, data=json.dumps(data))
             if response.status_code == 200:
                 # Get the model's response and add it to the history

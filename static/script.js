@@ -19,8 +19,15 @@ async function sendMessage() {
     const message = userInput.value.trim();
     if (!message) return;
 
+    // Check for "clear history" command
+    if (message.toLowerCase() === "clear history") {
+        chatContainer.innerHTML = ''; // Clear all messages in the chat container
+        }
+
+
     addMessage(message, 'user'); // Add user message to chat
     userInput.value = ''; // Clear input field
+
 
     // Create and add the "Thinking..." indicator in the bot message area
     const thinkingIndicator = document.createElement('div');

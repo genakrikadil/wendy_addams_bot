@@ -24,6 +24,8 @@ I do use llama3.2:3b image. You can read about it here:
 #by using existing model file
 
     ollama create wednesday --file wednesday
+    ollama create christians --file christians
+    ollama create scientist --file scientist
 
 This command will give you modelfile for the any model you have already
 This is not required for the project, just to satisfy your curiocity

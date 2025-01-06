@@ -97,9 +97,10 @@ Navigate to the ollama_mod directory and follow the instructions in the README.m
 2) Start Ollama:
 
 Ensure that the Ollama server is running.
-'ollama - list' should show you that 'wednesday' model is available
+'ollama - list' should show you that 'wednesday' and other models are available
+see the list of models in globals.py
 
-3) Configure Ollama URL in ask_llama.py:
+3) Configure Ollama URL in globals.py:
 If python script runs on the same server with ollama and you use venv, no changes are needed.
 
 If it is another server, and/or you use Docker, you need to adjust URL
@@ -189,8 +190,16 @@ Jan 03 2025
 Jan 04 2025
 
 - updated 'Docker' version (bug fixes)
-- cleaned "Assistant: Assistant:" in ollama responces (see ask_llama.py)
+- cleaned "Assistant:" in ollama responces (see ask_llama.py)
 - it prints version of the code when user enters "version". Added vesion.py file where the current version of the code written
+
+Jan 06 2025
+
+- when user enters "?" it prints the list of awailable commands
+- added possibility to switch ollama models from prompt
+- general logic cleanup, created "globals.py" file to manage "cusomizabe" constants,
+version number moved to that file. File "versions" deleted. 
+
 
 
 

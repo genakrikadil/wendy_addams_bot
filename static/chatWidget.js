@@ -16,7 +16,7 @@
         <p>Agent online. What brings you here?</p>
       </div>
       <div class="chat-footer">
-        <input type="text" id="chatInput" placeholder="Type a message or 'clear history'... " />
+        <input type="text" id="chatInput" placeholder="Type a message or '?' for help... " />
         <button id="voiceButton" aria-label="Start voice input">
           <img src="/static/icons/mic.png" />
         </button>
@@ -230,6 +230,11 @@
   async function sendMessage() {
   const message = chatInput.value.trim();
   if (!message) return;
+
+    // Check for "clear history" command
+    if (message.toLowerCase() === "clear history") {
+      chatBody.innerHTML = ""; 
+    }
   
   // Print user's message on the body of chat
   addMessage(message, "user");
