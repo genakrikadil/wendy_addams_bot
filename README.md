@@ -37,6 +37,8 @@ Users do not need to select a language from the dropdown menu when entering text
 
 Reloading the web page does not clear the chat "context". To clear context, you need to enter "clear history" in the chat input.
 
+If user enters "version" then it prints current version of the code.
+
 Before pressing the Mic button, make sure to select the Voice Input Language. If the Mic button is pressed, stop it, change the language, and then press the Mic again.
 
 
@@ -83,6 +85,7 @@ Ollama server with llama3.2 image (or whatever image you like)
     ├── requirements.txt (to give to PIP or docker)
     ├── Dockerfile (to build docker file)
     ├── docker-compose.yml (to build docker file)
+    ├── version.py (current code version)
     └── README.md (this file)
 
 # How to Run:
@@ -187,5 +190,7 @@ Jan 04 2025
 
 - updated 'Docker' version (bug fixes)
 - cleaned "Assistant: Assistant:" in ollama responces (see ask_llama.py)
+- it prints version of the code when user enters "version". Added vesion.py file where the current version of the code written
+
 
 

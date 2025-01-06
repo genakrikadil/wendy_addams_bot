@@ -39,13 +39,18 @@ import requests  # Add this import statement
 import json
 from hallucination import is_hallucination
 import re
+import version #type:ignore  here we put all global constants
 
 #URL = "http://192.168.2.112:11434/api/generate"
 URL = "http://127.0.0.1:11434/api/generate"
 #URL ="http://10.20.187.188:11434/api/generate"
 
+# Model we use. We adjust its behaviour to match "character"
+#see folder "ollama_mod"
+
+MODEL = "wednesday" 
+
 #clean ollama nonsence 
-import re
 
 def clean_ollama_response(response):
     # Set of words or phrases to remove from ollama response
@@ -64,10 +69,6 @@ def clean_ollama_response(response):
 #print("Cleaned response:", cleaned_response)
 
 
-# Model we use. We adjust its behaviour to match "character"
-#see folder "ollama_mod"
-MODEL = "wednesday"
-
 class LlamaChat:
     def __init__(self, history_limit=10):
         self.url = URL  # Use the constant for the URL
@@ -84,7 +85,10 @@ class LlamaChat:
         if prompt.lower() == "clear history":
             self.clear_history()
             return "Let's start new conversation."
-
+        # Check if asked for version
+        if prompt.lower() == "version":
+            return version.VERSION
+        
         # Add the user's prompt to the history
         self.history.append({"role": "user", "content": prompt})
 
@@ -123,7 +127,7 @@ class LlamaChat:
                 #the history is not poisoned with "banned" theme and we will be able to continue
                 #our dialogue
                 if is_hallucination(model_response):
-                    model_response="Let's talk about something else."
+                    model_response="I do not want to talk about this."
                     if len(self.history) > 2:
                         self.history = self.history[:-2]
                     else:
@@ -139,7 +143,7 @@ class LlamaChat:
             else:
                 return f"Something is not right with Ollama Server. Here is what she sad:<br><br>\n {response.status_code}: {response.text}"
         except Exception as e:
-            return f"Is Ollama server running? <br> Here is Error I received:<br><br> \n {str(e)}"
+            return f"<h1>Is Ollama server running?</h1> <br><br> Here is Error I received:<br><br> \n {str(e)}"
 
 if __name__ == '__main__':
     chat = LlamaChat()
