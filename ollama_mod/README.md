@@ -22,10 +22,18 @@ I do use llama3.2:3b image. You can read about it here:
 
 #run this command to create Wendy Addams
 #by using existing model file
-
+    
+    #Wednesday Addams style model
     ollama create wednesday --file wednesday
+
+    #christian model
     ollama create christians --file christians
+    
+    #pure scientific
     ollama create scientist --file scientist
+    
+    # same as scientific but based on WizardLM2 model
+    ollama create wizard --file wizard
 
 This command will give you modelfile for the any model you have already
 This is not required for the project, just to satisfy your curiocity

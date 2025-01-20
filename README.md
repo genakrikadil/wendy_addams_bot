@@ -200,6 +200,7 @@ Jan 06 2025
 - general logic cleanup, created "globals.py" file to manage "cusomizabe" constants,
 version number moved to that file. File "versions" deleted. 
 
-
+Jan 20 2025
+- bunch of various fixes, made model selection per user's session. For the records, if you open 2 different browsers, the "sessions" will be different,but 2 TABs in the same browser will be within the same session. This is by-design.
 
 

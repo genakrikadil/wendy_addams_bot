@@ -1,4 +1,4 @@
-FROM llama3.2
+FROM WizardLM2
 
 # Set model parameters
 PARAMETER temperature 0.5

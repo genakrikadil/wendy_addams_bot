@@ -62,6 +62,7 @@ class LlamaChat:
         self.headers = {"Content-Type": "application/json"}
         self.history = []  # Store conversation history
         self.history_limit = history_limit  # Set a maximum history limit
+        self.model = globals.MODEL 
 
     def clear_history(self):
         """Clears the conversation history."""
@@ -86,10 +87,10 @@ class LlamaChat:
         
         # "version" command
         if prompt.lower() == "version":
-            return globals.VERSION+" Model:"+globals.MODEL
+            return globals.VERSION+" Model:"+self.model
         
         # "model:" command
-        prompt,changed=analyze_and_change_model(prompt)
+        prompt,self.model,changed=analyze_and_change_model(prompt,self.model)
         if changed:
             return prompt
         
@@ -122,7 +123,7 @@ class LlamaChat:
 
         # Data payload for the API
         data = {
-            "model": globals.MODEL,  # Use the constant for the model
+            "model": self.model,  # Use the constant for the model
             "prompt": full_prompt,
             "stream": False,
             "max_tokens":80,           # Limit to short answers
