@@ -85,7 +85,6 @@ Ollama server with llama3.2 image (or whatever image you like)
     ├── requirements.txt (to give to PIP or docker)
     ├── Dockerfile (to build docker file)
     ├── docker-compose.yml (to build docker file)
-    ├── version.py (current code version)
     └── README.md (this file)
 
 # How to Run:
