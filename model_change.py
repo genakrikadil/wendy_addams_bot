@@ -1,13 +1,11 @@
-import globals #type:ignore  here we put all global constants
-
-# Define a list of available models
-#available_models = ["christian", "wednesday"]
-
-# Global variable to store the currently selected model
-#MODEL = globals.MODEL
-
 # Function to analyze user input and change the global MODEL variable if the input matches the format
-#prompt,self.model,changed=analyze_and_change_model(prompt,self.model)
+# "model:<modelname>". If the model name is valid, return a success message and the new model name.
+# If the model name is invalid, return a list of available models. If the input does not match the
+# format, return the input as is.
+
+import globals #type:ignore  here we put all global constants and variables
+
+
 def analyze_and_change_model(user_input,model_name):
     # Check if the input matches the format "model:<modelname>"
     if user_input.startswith("model:"):
@@ -19,3 +17,22 @@ def analyze_and_change_model(user_input,model_name):
             return f"Available models are: {', '.join(globals.MODELS)}.", model_name, True
     return user_input, model_name,False
 
+# Main function to test the model change functionality
+if __name__ == "__main__":
+    # Current model initialized from globals
+    current_model = globals.MODEL
+    
+    # Example user inputs
+    user_inputs = [
+        "model:christian",
+        "model:wednesday",
+        "model:unknown",
+        "Hello, how are you?"
+    ]
+    
+    for user_input in user_inputs:
+        response, current_model, changed = analyze_and_change_model(user_input, current_model)
+        if changed:
+            print(response)
+        else:
+            print(f"User input processed: {response}")
