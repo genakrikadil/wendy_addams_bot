@@ -180,7 +180,7 @@ Dec 27 2024:
     
 - Cleaning "User:" in ollama responces (see ask_llama.py)
     
-- Added the "Book of Psalms" Feature: Simply ask Wendy to read a specific Psalm (e.g. "Read me psalm 1" or "What is in Psalm 6?"), and she will do so effortlessly. This implementation might also inspire others to add similar 'quick and effective' RAG features.
+- Added the "Book of Psalms" Feature: Simply ask Wendy to read a specific Psalm (e.g. "Read me psalm 1" or "What is in Psalm 6?"), and she will do so effortlessly. This implementation might also inspire others to add similar 'quick and effective' RAG features. The "Proper" way for RAG is to use "Embeddings". You can get idea how to do that from my another project https://github.com/genakrikadil/RAG_Embeddings. It is easy to integrate into this chatbot.
 
 Jan 03 2025
 
